@@ -11,12 +11,13 @@
     * {
       margin: 0;
       padding: 0;
+      background-color: #F5F9FA;
     }
 
     .bg {
       width: 100%;
-      height: 700px;
-      background-image: url("1.png");
+      height: 1604px;
+      background-image: url("2.png");
       background-repeat: no-repeat;
       background-size: 100% auto;
       background-position: center top;
@@ -30,13 +31,13 @@
       font-weight: 500;
       letter-spacing: 2px;
       position: fixed;
-      top: 70.5%;
-      left: 36%;
+      top: 58%;
+      left: 38%;
     }
 
     .time {
       position: fixed;
-      top: 74.5%;
+      top: 61.5%;
       left: 29%;
       font-size: 20px;
       font-family: "./方正兰亭中粗黑繁体.TTF";
@@ -81,7 +82,6 @@
 <body>
   <div class="bg">
     <div class="riqi">
-      2023-01-02
     </div>
 
     <div class="time">
@@ -155,6 +155,17 @@
 
 
   <script>
+    getDate()
+    function getDate () {
+      var d = new Date();
+      var year = d.getFullYear() < 10 ? "0" + d.getFullYear() : d.getFullYear();
+      var month = (d.getMonth() + 1) < 10 ? ("0" + (d.getMonth() + 1)) : d.getMonth();
+      var date = d.getDate() < 10 ? "0" + d.getDate() : d.getDate();
+      console.log(year + "-" + month + "-" + date);
+      document.getElementsByClassName("riqi")[0].innerText = year + "-" + month + "-" + date;
+    }
+
+
     time();
     setInterval(time, 1000)
 
